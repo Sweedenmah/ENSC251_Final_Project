@@ -1,0 +1,14 @@
+Note: unless otherwise specified, N is the length of the list being
+operated upon.
+
+  FUNCTION NAME                 BIG-O    EXPLANATION
+  ----------------------------- -------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  pop()                         O(1)     There’s no looping behaviour
+  insert()                      O(N)     Since the list must stay sorted, it must be traversed (by means of a loop) in order to discover the correct place to insert the given value. In the worst case, the entire list will have to be traversed.
+  Searching by name             O(N^2)   Must traverse the list once in order to find all matching items, thus O(N). In order to be case-insensitive it has to capitalize each string in the list, which is O(M) where M is the length of the string, so the worst-case scenario is O(N^2).
+  Searching by attribute        O(N)     Same as above, without the requirement to capitalize, making it O(N)
+  searchAndDestroy()            O(N^2)   Must iterate through the entire list in order to find all items to be destroyed, thus O(N). Similarly to the previous function category, the capitalization loops push this to O(N^2).
+  aLittleOffTheTopAndBottom()   O(N)     Deleting the head and tail simultaneously is O(1), but resetting the tail pointer to the new end of the list requires traversing the list, making this function O(N).
+  showAllOverThreshold()        O(N)     Must iterate through the whole list in order to print all students that validate the criteria.
+  insertNew()                   O(N)     There aren’t any loops when inserting a new custom student, but it calls insert(), which is O(N) and thus overrides the otherwise O(1) function.
+  merge()                       O(N^2)   Must traverse the new list once for each item in the domestic and international lists. This means that it has a nested loop, automatically making this function O(N^2)
